@@ -1,3 +1,4 @@
+from app.services.docker_service import create_workspace_container
 from fastapi import APIRouter
 from pydantic import BaseModel
 import uuid
