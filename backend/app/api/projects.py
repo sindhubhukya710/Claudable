@@ -23,9 +23,13 @@ def create_project(request: ProjectRequest):
 
     os.makedirs(workspace_path, exist_ok=True)
 
+    # Create a Docker container for this project
+    container = create_workspace_container(project_id)
+
     return {
         "project_id": project_id,
         "project_name": request.project_name,
         "workspace": workspace_path,
+        "container": container,
         "status": "created"
     }

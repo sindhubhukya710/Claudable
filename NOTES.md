@@ -29,3 +29,14 @@ Likely Purpose:
 
 Next:
 Inspect pages/api/ws
+
+## Day 3
+
+- Installed Docker Desktop and WSL 2
+- Verified Docker Engine
+- Created Docker service using Docker SDK
+- Tested Docker container creation
+- Integrated Docker with the /projects API
+- Each project now creates:
+  - a workspace folder
+  - a dedicated Docker container
