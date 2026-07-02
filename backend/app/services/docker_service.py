@@ -22,3 +22,28 @@ def create_workspace_container(project_id: str):
         "container_name": container.name,
         "status": container.status,
     }
+
+
+def delete_workspace_container(container_id: str):
+    """
+    Stop and remove a Docker container.
+    """
+
+    try:
+        container = client.containers.get(container_id)
+
+        # Stop the container
+        container.stop()
+
+        # Remove the container
+        container.remove()
+
+        return {
+            "status": "deleted"
+        }
+
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e)
+        }
